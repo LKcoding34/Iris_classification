@@ -35,6 +35,11 @@ species_descriptions = {
     "virginica": "Sepal length: 4.9–7.9 cm\nSepal width: 2.2–3.8 cm\nPetal length: 4.5–6.9 cm\nPetal width: 1.4–2.5 cm"
 }
 
+@st.cache_data
+def get_image(species):
+    return species_images[species]
+
+
 # Streamlit UI
 st.title("🌸 Iris Flower Classifier")
 st.write("Enter flower measurements to predict the species:")
@@ -58,7 +63,7 @@ if submit:
     col1, col2 = st.columns([2, 1])
     with col1:
         st.image(
-            species_images[predicted_species],
+            get_image(predicted_species),
             
             use_container_width=True
         )
