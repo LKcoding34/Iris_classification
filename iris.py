@@ -39,7 +39,6 @@ species_descriptions = {
 def get_image(species):
     return species_images[species]
 
-
 # Streamlit UI
 st.title("🌸 Iris Flower Classifier")
 st.write("Enter flower measurements to predict the species:")
